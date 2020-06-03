@@ -3,6 +3,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json())
 
@@ -685,13 +686,16 @@ async function initAccount() {
 }
 
 //keystore after getting public and private key from the account initiation
-const keystore = {
-    publicKey: 'edpkvEhAwoBDM8KtojcctKyi5z8nSV3EceKKtkwMZY4qeFh3xw9dS6',
-    privateKey: 'edskRovMZvu7VMU6twFYDuSqA4TUb6tag6QM57nfiqUNfQpjGQK2wGNvaUfdRAn1jWacn5gPKqqbpcRHTc4HUG2ADGcFyH3MeU',
-    publicKeyHash: 'tz1KmD7sRNtzQEgfUQtURnta4kHwqB1YMFaw',
-    seed: '',
-    storeType: conseiljs.StoreType.Fundraiser
-};
+var keystore;
+
+// keystore = {
+//     publicKey: 'edpkvEhAwoBDM8KtojcctKyi5z8nSV3EceKKtkwMZY4qeFh3xw9dS6',
+//     privateKey: 'edskRovMZvu7VMU6twFYDuSqA4TUb6tag6QM57nfiqUNfQpjGQK2wGNvaUfdRAn1jWacn5gPKqqbpcRHTc4HUG2ADGcFyH3MeU',
+//     publicKeyHash: 'tz1KmD7sRNtzQEgfUQtURnta4kHwqB1YMFaw',
+//     seed: '',
+//     storeType: conseiljs.StoreType.Fundraiser
+// };
+
 
 //Function to activate account
 async function activatAccount() {
@@ -1242,6 +1246,13 @@ async function mintingCertificate(p) {//function to Issue Certificates
     `)
     console.log(entryPoints)
     console.log(entryPoints[1].parameters)
+    keystore={
+      publicKey:p.public_key,
+      privatekey:p.private_key,
+      publicKeyHash:p.public_hash,
+      seed: '',
+      storeType: conseiljs.StoreType.Fundraiser
+    }
       // Use the mintingCertificate functions to issue a NFT based certificate
      //console.log('(Right'+entryPoints[1].generateInvocationPair(['tz1KmD7sRNtzQEgfUQtURnta4kHwqB1YMFaw'],"Ashis",10,"Ashis-Quiz-20").parameters+')')
      console.log('(Right '+[`\'"${p.address}"\'`],`\'"${p.name}"\'`,p.score,`\'"${p.name}-Quiz-${p.score}"\'`+')')
@@ -2319,6 +2330,8 @@ async function deleteCertificate(p) {
   `)
 
 console.log(p)
+
+
  // Entering the NFT to delete it and make the score null
   const result = await conseiljs.TezosNodeWriter.sendContractInvocationOperation(tezosNode, keystore, contractAddress,
            100000, 1000000, '', 10000, 1000000, entryPoints[0].generateInvocationString(

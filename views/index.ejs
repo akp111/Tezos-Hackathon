@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://www.tezbridge.com/plugin.js"></script>
+
     <title>Quiz with Tezos</title>
     <style>
     body{
@@ -32,6 +34,9 @@
         border-style: ridge;
         background-color: teal;
     }
+    li{
+        font-size: x-large;
+    }
     
     </style>
   
@@ -40,13 +45,21 @@
     <h1>Welcome to Quiz with Tezos!!</h1>
     <br>
     <br>
- 
- <h2>Enter you name</h2>
+    
+    <form>
+    <h2>Enter you name</h2>
     <input type="text" class="in" id="name">
     <br>
-    <h2>Enter your wallet address</h2>
-    <input type="text" class="in" id="address">
-
+    <h2>Enter your public key</h2>
+    <input type="text" class="in" id="publickey">
+    <br>
+    <h2>Enter your private key</h2>
+    <input type="text" class="in" id="privatekey">
+    <br>
+    <h2>Enter your public key hash</h2>
+    <input type="text" class="in" id="publichash">
+    <br>
+    </form>
 
 <br>
 <br>
@@ -54,29 +67,150 @@
 <button id="q"><h2 >Questions</h2></button>
 <br>
 <br>
-    <h3 >1. Complete the series. 9 = 4, 21 = 9, 22 = 9, 24 = 10, 8 = 5, 7 = 5, 99 = 10, 100 = 7, 16 = ?</h2>
-    <input type="text" id ="q1">
-    <br>
-    <h3 >2. What goes up and down, but still remains in the same place?</h3>
-    <input type="text" id ="q2">
-    <br>
+        <ol>
+            <li>What are the features of Tezos?</li>
+            <input type="radio" id="q1a" name="q1" value="Fromal Verification">
+            <label for="q1a">Formal verification</label><br>
+            <input type="radio" id="q1b" name="q1" value="On-chain governance">
+            <label for="q1b">On-chain governance</label><br>
+            <input type="radio" id="q1c" name="q1" value="Liquid Proof of Stake">
+            <label for="q1c">Liquid Proof of Stake</label><br>
+            <input type="radio" id="q1d" name="q1" value="All of the above">
+            <label for="qid">All of the above</label><br>
 
-    <h3 >3. There are 3 apples and you take away 2. How many do you have?</h3>
-    <input type="text" id ="q3">
-    <br>
-    <h3 >4. Divide 30 by 1/2 and add 10. What is the answer? </h3>
-    <input type="text" id ="q4">
-    <br>
-    <h3 >5. Some months have 31 days, how many have 28?</h3>
-    <input type="text" id ="q5">
-    <br>
-    <div><button id="submit" onclick="totalScore()">Submit</button></div>
-    <br>
+            <li>What is Tezos’s native token called?</li>
+            <input type="radio" id="q2a" name="q2" value="Tez">
+            <label for="q2a">Tez</label><br>
+            <input type="radio" id="q2b" name="q2" value="Tezzy">
+            <label for="q2b">Tezzy</label><br>
+            <input type="radio" id="q2c" name="q2" value="Tezzie">
+            <label for="q2c">Tezzie</label><br>
+            <input type="radio" id="q2d" name="q2" value="Tezas">
+            <label for="q2d">Tezas</label><br>
+
+            
+
+            <li>What is staking in Tezos called?</li>
+            <input type="radio" id="q3a" name="q3" value="Packing">
+            <label for="q3a">Packing</label><br>
+            <input type="radio" id="q3b" name="q3" value="Stacking">
+            <label for="q3b">Stacking</label><br>
+            <input type="radio" id="q3c" name="q3" value="Forging">
+            <label for="q3c">Forging</label><br>
+            <input type="radio" id="q3d" name="q3" value="Baking">
+            <label for="q3d">Baking</label><br>
+
+            
+
+            <li>What is Tezos’s proof of stake mechanism called?</li>
+            <input type="radio" id="q4a" name="q4" value="Solid Proof of Stake">
+            <label for="4qa">Solid Proof of Stake</label><br>
+            <input type="radio" id="q4b" name="q4" value="Delegated Proof of Stake">
+            <label for="4qb">Delegated Proof of Stake</label><br>
+            <input type="radio" id="q4c" name="q4" value="Liquid Proof of Stake">
+            <label for="4qc">Liquid Proof of Stake</label><br>
+            <input type="radio" id="q4d" name="q4" value="Gas Proof of Stake">
+            <label for="4qd">Gas Proof of Stake</label><br>
+
+            
+
+            <li>Which one of the following is Tezos machine level language?</li>
+            <input type="radio" id="q5a" name="q5" value="Albeit">
+            <label for="q5a">Albeit</label><br>
+            <input type="radio" id="q5b" name="q5" value="Michelson">
+            <label for="q5b">Michelson</label><br>
+            <input type="radio" id="q5c" name="q5" value="Michael ">
+            <label for="q5c">Michael </label><br>
+            <input type="radio" id="q5d" name="q5" value="Jackson">
+            <label for="q5d">Jackson</label><br>
+
+            
+            
+            <li>Which Python library helps you write Tezos smart contracts in Python?</li>
+            <input type="radio" id="q6a" name="q6" value="SmartPy">
+            <label for="q6a">SmartPy</label><br>
+            <input type="radio" id="q6b" name="q6" value="Vyper">
+            <label for="q6b">Vyper</label><br>
+            <input type="radio" id="q6c" name="q6" value="Pyper">
+            <label for="q6c">Pyper</label><br>
+            <input type="radio" id="q6d" name="q6" value="Python">
+            <label for="q6d">Python</label><br>
+
+          
+
+            <li>When does a new snapshot get generated? </li>
+            <input type="radio" id="q7a" name="q7" value="Every 32 blocks">
+            <label for="q7a">Every 32 blocks</label><br>
+            <input type="radio" id="q7b" name="q7" value="Every 64 blocks">
+            <label for="q7b">Every 64 blocks</label><br>
+            <input type="radio" id="q7c" name="q7" value="Every 128 blocks">
+            <label for="q7c">Every 128 blocks</label><br>
+            <input type="radio" id="q7d" name="q7" value="Every 256 blocks">
+            <label for="q7d">Every 256 blocks</label><br>
+
+           
+
+            <li>Currently how many XTZ constitute one roll?</li>
+            <input type="radio" id="q8a" name="q8" value="2000">
+            <label for="q8a">2000</label><br>
+            <input type="radio" id="q8b" name="q8" value="8000">
+            <label for="q8b">8000</label><br>
+            <input type="radio" id="q8c" name="q8" value="14000">
+            <label for="q8c">14000</label><br>
+            <input type="radio" id="q8d" name="q8" value="10000">
+            <label for="q8d">10000</label><br>
+
+            
+
+            <li>How many votes does one roll constitute?</li>
+            <input type="radio" id="q9a" name="q9" value="1">
+            <label for="q9a">1</label><br>
+            <input type="radio" id="q9b" name="q9" value="2">
+            <label for="q9b">2</label><br>
+            <input type="radio" id="q9c" name="q9" value="3">
+            <label for="q9c">3</label><br>
+            <input type="radio" id="q9d" name="q9" value="4">
+            <label for="q9d">4</label><br>
+
+
+            <li>How long does a cycle last?</li>
+            <input type="radio" id="q10a" name="q10" value="1048 blocks">
+            <label for="q10a">1048 blocks</label><br>
+            <input type="radio" id="q10b" name="q10" value="2196 blocks">
+            <label for="q10b">2196 blocks</label><br>
+            <input type="radio" id="q10c" name="q10" value="4096 blocks">
+            <label for="q10c">4096 blocks</label><br>
+            <input type="radio" id="q10d" name="q10" value="2048 blocks">
+            <label for="q10d">2048 blocks</label><br>
+
+           
+
+            <li>Name the first Tezos on-chain upgrade proposal.</li>
+            <input type="radio" id="q11a" name="q11" value="Athens A">
+            <label for="q11a">Athens A</label><br>
+            <input type="radio" id="q11b" name="q11" value="Babylon">
+            <label for="q11b">Babylon</label><br>
+            <input type="radio" id="q11c" name="q11" value="Carthage">
+            <label for="q11c">Carthage</label><br>
+            <input type="radio" id="q11d" name="q11" value="Athens B">
+            <label for="q11d">Athens B</label><br>
+
+            <li>Which govt. organisation uses Tezos smart contracts? </li>
+            <input type="radio" id="q12a" name="q12" value="Indian Space Research Organisation">
+            <label for="q12a">Indian Space Research Organisation</label><br>
+            <input type="radio" id="q12b" name="q12" value="Department of homeland security, USA">
+            <label for="q12b">Department of homeland security, USA</label><br>
+            <input type="radio" id="q12c" name="q12" value="French cyber crime division, The Gendarmerie Nationale (Cybercrime Centre)">
+            <label for="q12c">French cyber crime division, The Gendarmerie Nationale (Cybercrime Centre)</label><br>
+            <input type="radio" id="q12d" name="q12" value="The Ministry of Defence of the Russian Federation">
+            <label for="q12d">The Ministry of Defence of the Russian Federation</label><br>
+        </ol>
+        <div><button id="submit" onclick="totalScore()">Submit</button></div>
     <br>
 
     <p>Your Certification ID(Use this to verify whenever needed):</p>><p id ="total"></p>
     <!-- <script src="https://cdn.jsdelivr.net/gh/cryptonomic/conseiljs/dist-web/conseiljs.min.js"
-    integrity="sha384-IDwJO+ahQcXoDx++lRH6FPOk8JDHv9RbB2HBME19y52wQ5pi+HtT/ndp8dpdx83f"
+    integrity="sha384-IDwJO+ahQcXoDx++lRH6FPOk8JDHv8RbB2HBME18y52wQ5pi+HtT/ndp8dpdx83f"
     crossorigin="anonymous" type="text/javascript"></script>
 <script src="bundle.js" type="text/javascript"></script>
      -->
@@ -91,6 +225,7 @@
         <h2>If you are admin, you can delete the certificate by entering the Certificate Id</h2>
         <input type="text" name="del">
         <button>Delete Certificate!!</button>
+        
     </form>
     <br>
     <br>
@@ -98,25 +233,25 @@
 </body>
 <script>
     var score=0
+    
     function totalScore(){
 
-        score =0
-        if(document.getElementById("q1").value==9)
-        score+=1
+       if(document.getElementById("q1d").checked) score++
+       if(document.getElementById("q2b").checked) score++
+       if(document.getElementById("q3d").checked) score++
+       if(document.getElementById("q4c").checked) score++
+       if(document.getElementById("q5b").checked) score++
+       if(document.getElementById("q6a").checked) score++
+       if(document.getElementById("q7d").checked) score++
+       if(document.getElementById("q8b").checked) score++
+       if(document.getElementById("q9a").checked) score++
+       if(document.getElementById("q10c").checked) score++
+       if(document.getElementById("q11a").checked) score++
+       if(document.getElementById("q12c").checked) score++
 
-        if(document.getElementById("q2").value=='stairs')
-        score+=1
-
-        if(document.getElementById("q3").value==2)
-        score+=1
-
-        if(document.getElementById("q4").value==70)
-        score+=1
-
-        if(document.getElementById("q5").value=='all')
-        score+=1
+       
         document.getElementById("total").innerHTML=document.getElementById('name').value+'-Quiz-'+score;
-    const data={'score':score,'name':document.getElementById('name').value,'address':document.getElementById('address').value}
+    const data={'score':score,'name':document.getElementById('name').value,'address':document.getElementById('address').value,'public_key':documen.getElementById('publickey'),'private_key':documen.getElementById('publickey'),'public_hash':documen.getElementById('publichash')}
         
     fetch('/new', {
     method: 'POST',
