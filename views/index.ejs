@@ -251,7 +251,7 @@
 
        
         document.getElementById("total").innerHTML=document.getElementById('name').value+'-Quiz-'+score;
-    const data={'score':score,'name':document.getElementById('name').value,'address':document.getElementById('address').value,'public_key':documen.getElementById('publickey'),'private_key':documen.getElementById('publickey'),'public_hash':documen.getElementById('publichash')}
+    const data={'score':score,'name':document.getElementById('name').value,'public_key':document.getElementById('publickey').value,'private_key':document.getElementById('privatekey').value,'public_hash':document.getElementById('publichash').value}
         
     fetch('/new', {
     method: 'POST',

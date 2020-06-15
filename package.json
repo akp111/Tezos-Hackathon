@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-transform-flow-strip-types": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
     "@taquito/taquito": "^6.3.0-wallet.4",
     "@taquito/tezbridge-signer": "^6.3.0-wallet.4",
     "body-parser": "^1.19.0",
@@ -16,6 +18,7 @@
     "conseiljs": "^0.4.1",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "tezbridge-crypto": "^1.0.59"
   }
 }
