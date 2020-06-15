@@ -1255,10 +1255,10 @@ async function mintingCertificate(p) {//function to Issue Certificates
     }
       // Use the mintingCertificate functions to issue a NFT based certificate
      //console.log('(Right'+entryPoints[1].generateInvocationPair(['tz1KmD7sRNtzQEgfUQtURnta4kHwqB1YMFaw'],"Ashis",10,"Ashis-Quiz-20").parameters+')')
-     console.log('(Right '+[`\'"${p.address}"\'`],`\'"${p.name}"\'`,p.score,`\'"${p.name}-Quiz-${p.score}"\'`+')')
+     console.log('(Right '+[`\'"${p.public_hash}"\'`],`\'"${p.name}"\'`,p.score,`\'"${p.name}-Quiz-${p.score}"\'`+')')
      const result = await conseiljs.TezosNodeWriter.sendContractInvocationOperation(tezosNode, keystore, contractAddress,
-             100000, 1000000, '', 10000, 1000000, entryPoints[1].generateInvocationString([`"${p.address}"`],`"${p.name}"`,p.score,`"${p.name}-Quiz-${p.score}"`).entrypoint,
-                 '(Right '+entryPoints[1].generateInvocationPair([`"${p.address}"`],`"${p.name}"`,p.score,`"${p.name}-Quiz-${p.score}"`).parameters+')',
+             100000, 1000000, '', 10000, 1000000, entryPoints[1].generateInvocationString([`"${p.public_hash}"`],`"${p.name}"`,p.score,`"${p.name}-Quiz-${p.score}"`).entrypoint,
+                 '(Right '+entryPoints[1].generateInvocationPair([`"${p.public_hash}"`],`"${p.name}"`,p.score,`"${p.name}-Quiz-${p.score}"`).parameters+')',
                  conseiljs.TezosParameterFormat.Michelson);
     console.log(`Injected operation group id ${result.operationGroupID}`);
     
