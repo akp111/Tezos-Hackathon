@@ -1,0 +1,7 @@
+{
+    "name":"Quiz with Tezos",
+    "description":"",
+    "repository":"https://github.com/akp111/Tezos-Hackathon",
+    "keyword":["Tezos Dapp","Conseiljs"],
+    "image":"heruko/nodejs"
+}
