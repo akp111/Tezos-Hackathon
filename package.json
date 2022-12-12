@@ -19,7 +19,7 @@
     "browserify": "^16.5.1",
     "conseiljs": "^0.4.1",
     "ejs": "^3.1.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^2.0.3",
     "tezbridge-crypto": "^1.0.59"
   },
